@@ -27,12 +27,22 @@ public class ControllerManager : MonoBehaviour
 
     public bool canJump;
     public float jumpForce = 10f;
+    public float maxJumpHeight = 4f; // Maximum jump height
+    public float fallMultiplier = 2.5f; // Fall multiplier for increased gravity
+    public float jumpDuration = 0.5f; // Maximum duration of the jump
+    private float jumpTimer; // Timer to track jump duration
     public int maxJumps = 2; // Maximum number of jumps
     private int remainingJumps; // Number of jumps left
+
+    public bool isCrouching = false;
+    public float crouchScale = 0.5f; // Scale factor when crouching
+
+    private SphereCollider sphereCollider;
 
     void Start()
     {
         remainingJumps = maxJumps;
+        sphereCollider = GetComponent<SphereCollider>();
     }
 
     void Update()
@@ -43,7 +53,33 @@ public class ControllerManager : MonoBehaviour
         // Check for jump input and if the player is over an object with the tag 'Ground'
         if (Input.GetKeyDown(KeyCode.Space) && canJump && (IsGrounded() || remainingJumps > 0))
         {
-            Jump();
+            StartJump();
+        }
+
+        // Apply increased gravity when falling
+        if (GetComponent<Rigidbody>().velocity.y < 0)
+        {
+            GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+
+        // Check for jump duration
+        if (Input.GetKey(KeyCode.Space) && jumpTimer > 0 && (IsGrounded() || remainingJumps > 0))
+        {
+            ContinueJump();
+        }
+        else
+        {
+            EndJump();
+        }
+
+        // Check for crouch input
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            Crouch();
+        }
+        else
+        {
+            StandUp();
         }
     }
 
@@ -62,19 +98,78 @@ public class ControllerManager : MonoBehaviour
     void MovePlayer(Vector3 movement)
     {
         // Translate the player based on movement input
-        transform.Translate(movement * movementSpeed * Time.deltaTime);
+        transform.Translate(movement * (isCrouching ? movementSpeed * crouchScale : movementSpeed) * Time.deltaTime);
     }
 
-    void Jump()
+    void StartJump()
     {
         // If the player is on the ground or has remaining jumps
         if (IsGrounded() || remainingJumps > 0)
         {
-            // Apply jump force
-            GetComponent<Rigidbody>().velocity = new Vector3(0f, jumpForce, 0f);
+            // Start the jump timer
+            jumpTimer = jumpDuration;
+
+            // Apply initial jump force
+            GetComponent<Rigidbody>().velocity = new Vector3(0f, CalculateJumpForce(), 0f);
 
             // Reduce the remaining jumps
             remainingJumps--;
+        }
+    }
+
+    void ContinueJump()
+    {
+        // If the jump duration has not expired
+        if (jumpTimer > 0)
+        {
+            // Apply additional jump force
+            GetComponent<Rigidbody>().velocity += Vector3.up * CalculateJumpForce() * Time.deltaTime;
+
+            // Decrease the jump timer
+            jumpTimer -= Time.deltaTime;
+        }
+        else
+        {
+            EndJump();
+        }
+    }
+
+    void EndJump()
+    {
+        // Reset the jump timer
+        jumpTimer = 0f;
+    }
+
+    float CalculateJumpForce()
+    {
+        // Adjust jump force based on the remaining jump duration
+        float normalizedJumpHeight = jumpTimer / jumpDuration;
+        return Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * maxJumpHeight * normalizedJumpHeight);
+    }
+
+    void Crouch()
+    {
+        if (!isCrouching)
+        {
+            isCrouching = true;
+            transform.localScale = new Vector3(1f, crouchScale, 1f);
+
+            // Adjust Sphere Collider properties
+            sphereCollider.radius *= crouchScale;
+            sphereCollider.center = new Vector3(sphereCollider.center.x, sphereCollider.center.y * crouchScale, sphereCollider.center.z);
+        }
+    }
+
+    void StandUp()
+    {
+        if (isCrouching)
+        {
+            isCrouching = false;
+            transform.localScale = new Vector3(1f, 1f, 1f);
+
+            // Reset Sphere Collider properties
+            sphereCollider.radius /= crouchScale;
+            sphereCollider.center = new Vector3(sphereCollider.center.x, sphereCollider.center.y / crouchScale, sphereCollider.center.z);
         }
     }
 
