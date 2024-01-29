@@ -193,4 +193,8 @@ public class ControllerManager : MonoBehaviour
         Debug.Log("Not Grounded");
         return false;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        IsGrounded();
+    }
 }
