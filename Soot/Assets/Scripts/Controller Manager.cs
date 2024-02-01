@@ -181,7 +181,7 @@ public class ControllerManager : MonoBehaviour
         {
             if (hit.collider.CompareTag("Ground"))
             {
-                Debug.Log("Grounded");
+                //Debug.Log("Grounded");
 
                 // Reset the remaining jumps when grounded
                 remainingJumps = maxJumps;
@@ -195,6 +195,10 @@ public class ControllerManager : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        IsGrounded();
+        if (collision.gameObject.CompareTag("Ground")) 
+        {
+            IsGrounded();
+            remainingJumps = maxJumps;
+        }
     }
 }

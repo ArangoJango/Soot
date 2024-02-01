@@ -1,58 +1,69 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RechteckigMovingPlattform : MonoBehaviour
 {
-    public Transform[] positions;  // Array der Positionen, zwischen denen die Plattform sich bewegt
-    public float speed = 2.0f;      // Geschwindigkeit der Plattform
+    public Transform startPosition;
+    public float width = 5.0f; // Breite der Plattform
+    public float height = 2.0f; // Höhe der Plattform
+    public float speed = 2.0f;
+    public float delay = 1.0f;
+    public bool moveRight = true; // Richtung der Bewegung
 
-    private int targetIndex = 0;
+    private Vector3[] waypoints;
+    private int currentWaypointIndex = 0;
 
-    void Update()
+    void Start()
     {
-        // Bewege die Plattform zwischen den Positionen
-        MovePlatform();
+        CalculateWaypoints();
+        StartCoroutine(MovePlatform());
     }
 
-    void MovePlatform()
+    void CalculateWaypoints()
     {
-        if (positions.Length == 0)
-            return;
+        waypoints = new Vector3[5];
+        waypoints[0] = startPosition.position;
 
-        float step = speed * Time.deltaTime;
-
-        // Bewege zur Zielposition
-        transform.position = new Vector3(
-            Mathf.MoveTowards(transform.position.x, positions[targetIndex].position.x, step),
-            Mathf.MoveTowards(transform.position.y, positions[targetIndex].position.y, step),
-            transform.position.z
-        );
-
-        // Überprüfe, ob die Plattform die Zielposition erreicht hat
-        if (Vector3.Distance(transform.position, positions[targetIndex].position) < 0.01f)
+        if (moveRight)
         {
-            // Wechsle zum nächsten Ziel
-            targetIndex = (targetIndex + 1) % positions.Length;
+            waypoints[1] = startPosition.position + new Vector3(width, 0f, 0f);
+            waypoints[2] = startPosition.position + new Vector3(width, height, 0f);
+            waypoints[3] = startPosition.position + new Vector3(0f, height, 0f);
+            waypoints[4] = startPosition.position;
         }
-    }
-    void OnCollisionStay(Collision collision)
-    {
-        // Überprüfen, ob der Spieler auf der Plattform steht
-        if (collision.gameObject.CompareTag("Player"))
+        else
         {
-            // Verändere die relative Position des Spielers zur Plattform
-            collision.transform.parent = transform;
+            waypoints[1] = startPosition.position - new Vector3(width, 0f, 0f);
+            waypoints[2] = startPosition.position - new Vector3(width, height, 0f);
+            waypoints[3] = startPosition.position - new Vector3(0f, height, 0f);
+            waypoints[4] = startPosition.position;
         }
     }
 
-    void OnCollisionExit(Collision collision)
+    IEnumerator MovePlatform()
     {
-        // Überprüfen, ob der Spieler die Plattform verlässt
-        if (collision.gameObject.CompareTag("Player"))
+        while (true)
         {
-            // Setze die relative Position des Spielers zur Plattform zurück
-            collision.transform.parent = null;
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex], step);
+
+            if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex]) < 0.01f)
+            {
+                if (moveRight)
+                {
+                    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                    if (currentWaypointIndex == 0)
+                        yield return new WaitForSeconds(delay);
+                }
+                else
+                {
+                    currentWaypointIndex = (currentWaypointIndex - 1 + waypoints.Length) % waypoints.Length;
+                    if (currentWaypointIndex == waypoints.Length - 1)
+                        yield return new WaitForSeconds(delay);
+                }
+            }
+
+            yield return null;
         }
     }
 }
