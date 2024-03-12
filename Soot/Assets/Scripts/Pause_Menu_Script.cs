@@ -23,7 +23,8 @@ public class Pause_Menu_Script : MonoBehaviour
 
     public void GoToMainManue()
     {
-        SceneManager.LoadScene(3);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     public void Exit()

@@ -9,15 +9,23 @@ public class ChangeLevelScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         { 
-            SceneManager.LoadScene(0); 
+            SceneManager.LoadScene(1); 
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
+    }
+    public void GoToLevel1()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
