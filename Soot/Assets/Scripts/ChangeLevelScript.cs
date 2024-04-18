@@ -19,6 +19,10 @@ public class ChangeLevelScript : MonoBehaviour
         {
             SceneManager.LoadScene(3);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SceneManager.LoadScene(4);
+        }
     }
     public void GoToLevel1()
     {

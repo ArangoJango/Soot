@@ -34,6 +34,7 @@ public class ControllerManager : MonoBehaviour
     public int maxJumps = 2; // Maximum number of jumps
     private int remainingJumps; // Number of jumps left
 
+    public bool movement3d=false;
     public bool isCrouching = false;
     public float crouchScale = 0.5f; // Scale factor when crouching
 
@@ -87,12 +88,18 @@ public class ControllerManager : MonoBehaviour
     {
         // Get input for movement
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float VerticalInput = Input.GetAxisRaw("Vertical");
 
-        // Calculate movement direction
-        Vector3 movement = new Vector3(horizontalInput, 0f, 0f).normalized;
-
-        // Move the player
-        MovePlayer(movement);
+        if (movement3d)
+        {
+            Vector3 movement = new Vector3(horizontalInput, 0f, VerticalInput).normalized;
+            MovePlayer(movement);
+        }
+        else
+        {
+            Vector3 movement = new Vector3(horizontalInput, 0f, 0f).normalized;
+            MovePlayer(movement);
+        }
     }
 
     void MovePlayer(Vector3 movement)
