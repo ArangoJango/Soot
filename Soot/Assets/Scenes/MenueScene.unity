@@ -4743,6 +4743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1339825994}
   - component: {fileID: 1339825995}
+  - component: {fileID: 1339825996}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -4777,6 +4778,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8448883d890c33a42a280cd0d9cc17ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1339825996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339825993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e307836246cd240bbd6426d2bd2445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  Stars: {fileID: 0}
+  Collectables: {fileID: 0}
 --- !u!1 &1344446493
 GameObject:
   m_ObjectHideFlags: 0
@@ -6157,9 +6173,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1339825995}
-        m_TargetAssemblyTypeName: ChangeLevelScript, Assembly-CSharp
-        m_MethodName: GoToLevel1
+      - m_Target: {fileID: 1339825996}
+        m_TargetAssemblyTypeName: SaveLoadSystemScript, Assembly-CSharp
+        m_MethodName: LoadData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

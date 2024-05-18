@@ -9,8 +9,8 @@ public class Collection_Subject_Script : MonoBehaviour
     public event Action<int> OnStarsCollected;
     public event Action<int> OnCollectableCollected;
 
-    private int totalStars = 0;
-    private int totalCollected = 0;
+    public static int totalStars;
+    public static int totalCollected;
         public void CollectCoin(int starsToAdd)
         {
             totalStars += starsToAdd;

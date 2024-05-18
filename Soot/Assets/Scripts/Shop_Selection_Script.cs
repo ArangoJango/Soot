@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Shop_Selection_Script : MonoBehaviour
 {
     public GameObject ItemLInfo, ItemRInfo, ItemLFreischalten, ItemRFreischalten, ItemRbutton;
-
+    public GameObject FinalFreiL;
+    public GameObject UnlockLagerItem1;
     public void ItemLInfoUp()
     {
         ItemLInfo.SetActive(true);
@@ -41,5 +42,14 @@ public class Shop_Selection_Script : MonoBehaviour
     public void ItemRFreischaltennein()
     {
         ItemRFreischalten.SetActive(false);
+    }
+    public void ItemFinalFreischalten()
+    {
+        if (CountStarsGesamtScript.Starsgesamt>=50) 
+        { 
+            CountStarsGesamtScript.Starsgesamt -= 50;
+            FinalFreiL.SetActive(false);
+            UnlockLagerItem1.SetActive(true); 
+        }
     }
 }

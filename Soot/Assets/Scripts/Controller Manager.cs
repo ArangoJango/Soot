@@ -25,7 +25,7 @@ public class ControllerManager : MonoBehaviour
 
     public float movementSpeed = 5f;
 
-    public bool canJump;
+    public bool canJump, Grounded = false;
     public float jumpForce = 10f;
     public float maxJumpHeight = 4f; // Maximum jump height
     public float fallMultiplier = 2.5f; // Fall multiplier for increased gravity
@@ -111,7 +111,7 @@ public class ControllerManager : MonoBehaviour
     void StartJump()
     {
         // If the player is on the ground or has remaining jumps
-        if (IsGrounded() || remainingJumps > 0)
+        if (IsGrounded() || remainingJumps > 0 || Grounded)
         {
             // Start the jump timer
             jumpTimer = jumpDuration;
@@ -184,7 +184,7 @@ public class ControllerManager : MonoBehaviour
     {
         // Check if the player is over an object with the tag 'Ground'
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.5f))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
         {
             if (hit.collider.CompareTag("Ground"))
             {
@@ -200,12 +200,17 @@ public class ControllerManager : MonoBehaviour
         Debug.Log("Not Grounded");
         return false;
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground")) 
         {
+            Grounded = true;
             IsGrounded();
             remainingJumps = maxJumps;
+        } else
+        {
+            Grounded = false;
         }
+        
     }
 }
