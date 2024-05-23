@@ -10,6 +10,7 @@ public class Checkpoint_Script : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            SaveLoadSystemScript.ActivateE = true;
             SaveUI.SetActive(true);
             Respawn_Subject_Script respawn_Subject_Script = FindObjectOfType<Respawn_Subject_Script>();
 
@@ -23,5 +24,6 @@ public class Checkpoint_Script : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         SaveUI.SetActive(false);
+        SaveLoadSystemScript.ActivateE = false;
     }
 }

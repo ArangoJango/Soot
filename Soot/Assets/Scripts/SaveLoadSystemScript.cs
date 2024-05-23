@@ -14,6 +14,8 @@ public class SaveLoadSystemScript : MonoBehaviour
     public TMP_Text Stars, Collectables;
     public string StarsString, CollectablesString;
 
+    public static bool ActivateE=false;
+
     public static void StartSave()
     {
         SaveLoadSystemScript saveLoadSystem = new SaveLoadSystemScript();
@@ -65,5 +67,13 @@ public class SaveLoadSystemScript : MonoBehaviour
     public void DeleteData()
     {
         PlayerPrefs.DeleteAll();
+    }
+
+    public void Update()
+    {
+        if(ActivateE && Input.GetKeyDown(KeyCode.E))
+        {
+            SaveData();
+        }
     }
 }

@@ -603,6 +603,13 @@ UnityEngine.PlayerConnectionInternal::PollInternal
 UnityEngine.PlayerConnectionInternal::RegisterInternal
 UnityEngine.PlayerConnectionInternal::SendMessage
 UnityEngine.PlayerConnectionInternal::UnregisterInternal
+UnityEngine.PlayerPrefs::TrySetFloat
+UnityEngine.PlayerPrefs::TrySetInt
+UnityEngine.PlayerPrefs::TrySetSetString
+UnityEngine.PlayerPrefs::GetInt
+UnityEngine.PlayerPrefs::GetFloat
+UnityEngine.PlayerPrefs::GetString
+UnityEngine.PlayerPrefs::DeleteAll
 UnityEngine.Profiling.Profiler::GetRuntimeMemorySizeLong
 UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected
 UnityEngine.QualitySettings::get_billboardsFaceCameraPosition
@@ -815,7 +822,9 @@ UnityEngine.Rigidbody::get_velocity_Injected
 UnityEngine.Rigidbody::set_velocity_Injected
 UnityEngine.ScalableBufferManager::get_heightScaleFactor
 UnityEngine.ScalableBufferManager::get_widthScaleFactor
+UnityEngine.SceneManagement.Scene::GetBuildIndexInternal
 UnityEngine.SceneManagement.SceneManager::get_sceneCount
+UnityEngine.SceneManagement.SceneManager::GetActiveScene_Injected
 UnityEngine.SceneManagement.SceneManager::GetSceneAt_Injected
 UnityEngine.SceneManagement.SceneManagerAPIInternal::LoadSceneAsyncNameIndexInternal_Injected
 UnityEngine.Screen::get_fullScreen

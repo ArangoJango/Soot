@@ -21,7 +21,10 @@ extern void ChangeLevelScript_GoToLevel1_mF49202354B83B1D659B15F246FD502C60E4A98
 extern void ChangeLevelScript_Exit_m2F77E2303F2264D7944D7DE9400DFB15BE214EFB (void);
 extern void ChangeLevelScript__ctor_m151873EF9C2B05114D063C8427F624EBFFC739DB (void);
 extern void Checkpoint_Script_OnTriggerEnter_m62A1A4634EEE574B1DCB9FDF9AF4DC7E3401CA0B (void);
+extern void Checkpoint_Script_OnTriggerExit_mAF4825E0BF310D5F6916D2FBBC3A726291680D7E (void);
 extern void Checkpoint_Script__ctor_m617D0731457FCBFAF46734ED7CEF57BE2D2F612A (void);
+extern void CollectBlaupauseScript_OnTriggerEnter_m779787C719C75A9BAF55046ED2D8DAB97458E069 (void);
+extern void CollectBlaupauseScript__ctor_m92BF714ED76CED3C5EEF1FC35E8BAD22DB7C8A1E (void);
 extern void Collection_Subject_Script_add_OnStarsCollected_m24B8539D6DC3CC14008838FC0FEE7FB5709ED68D (void);
 extern void Collection_Subject_Script_remove_OnStarsCollected_m718BE3708EFC46D61AF2A8B6144B12242EBA253A (void);
 extern void Collection_Subject_Script_add_OnCollectableCollected_m816DC671ABF8E8303C1081E6A24FE68176D7827B (void);
@@ -42,8 +45,19 @@ extern void ControllerManager_CalculateJumpForce_mB5C3C4BDFA6F213E6A52454AB0343F
 extern void ControllerManager_Crouch_m3BFF044E48EA72935C6AA2B36C56F897B241BE05 (void);
 extern void ControllerManager_StandUp_m76847BC53CDF03BE013752641255E543D3733B17 (void);
 extern void ControllerManager_IsGrounded_m55DE5A0EE841D2FBA0D77643B97D1BFA94281690 (void);
-extern void ControllerManager_OnCollisionEnter_mA128A9606C83E4CEB965617EA557CC892769F684 (void);
+extern void ControllerManager_OnCollisionStay_m34AAB62E963B04DDB6FE80881D50A97DD5DC0FDF (void);
 extern void ControllerManager__ctor_m9A286134861DC4D5BAC0849A2770275D29C5E2DC (void);
+extern void CountStarsGesamtScript_Update_m1FDF14C83E7B3FE81FFF3D671255B6FC53A8B1DF (void);
+extern void CountStarsGesamtScript__ctor_mF58D4EED2558A1532A4E117B2C96F89F2A31222B (void);
+extern void CutsceneScript_Start_m90D548274D21B735188754404F4E43972E9A543F (void);
+extern void CutsceneScript_DestroyObject_m92755ECE400BFA62E9944A1C0E7A3B70A510089F (void);
+extern void CutsceneScript__ctor_mA26C4E105C1C460F2DD03EFAA18E7903AC208B1C (void);
+extern void U3CDestroyObjectU3Ed__3__ctor_mFBE334963945D6847A375776012755397755A13D (void);
+extern void U3CDestroyObjectU3Ed__3_System_IDisposable_Dispose_m7517D6B951CC2F5E67AF479DECCA099975D67BF4 (void);
+extern void U3CDestroyObjectU3Ed__3_MoveNext_mB03A61E0A83C6AC340A0D3A93BE44E56EFF3645E (void);
+extern void U3CDestroyObjectU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1810538D021306454B1148ED8A9BFF0A2BEB261F (void);
+extern void U3CDestroyObjectU3Ed__3_System_Collections_IEnumerator_Reset_m31F22B77E996A2778E63BE43BF89BF07F625F11D (void);
+extern void U3CDestroyObjectU3Ed__3_System_Collections_IEnumerator_get_Current_mE4E0359B3C4FFDA624EBC7462DB115458D7C8804 (void);
 extern void DeathScreenScript_Start_m4C51AD9E23B552FAA0D3CD067BDD640CC2F78512 (void);
 extern void DeathScreenScript_Update_m0EF72251831CCE18B0E5A5142552EE2FD9E95D00 (void);
 extern void DeathScreenScript_OnTriggerEnter_m08F1F9598CB9DCC648A3F5575EFD9C03409493D3 (void);
@@ -63,6 +77,11 @@ extern void KreisMovingPlattformScript_MoveInCircle_m661E3E8788AEE6667C3A779D90F
 extern void KreisMovingPlattformScript_OnCollisionStay_m6DC2F79E8C261CB77E82D8316D8372ED6AD0AE1D (void);
 extern void KreisMovingPlattformScript_OnCollisionExit_mDEA38E18E2156B962E6376438E4A4997CA021D1C (void);
 extern void KreisMovingPlattformScript__ctor_m29ED8526869CAA81C81352AED72A0CCA33AD9CC6 (void);
+extern void LagerAuswahlScript_Start_m25D5643F599274402E015E89C76A6522FF46ED95 (void);
+extern void LagerAuswahlScript_AuswahlJa_mA4EEC4C09AB806392AFB387B03EDEAF4097299C7 (void);
+extern void LagerAuswahlScript_AuswahlNein_m6831E419DA5C9EDD71C0201F5615DDF748E99E97 (void);
+extern void LagerAuswahlScript_AuswahlMenUFC_mEE38C729A32BABDB6C8373769D5276EDA8F50C8B (void);
+extern void LagerAuswahlScript__ctor_m41C0347D0E2735D8B55183554474236C64786EAF (void);
 extern void LevelCompleteScript_Start_m6FE3F00ECBBEB632B928ADF97C0DAD257C2C7859 (void);
 extern void LevelCompleteScript_OnTriggerEnter_m44433B3D8D339C34F52611DEDD444390609B1C25 (void);
 extern void LevelCompleteScript_GameOverScreen_mAF2CEDC45FDFA833B29722FEDC8CC0CC2BE50658 (void);
@@ -73,7 +92,16 @@ extern void LevelCompleteScript_RetryLvl1_m376CAB9BB6924F6DD34722BA96535C2FF8F5D
 extern void LevelCompleteScript_RetryLvl2_m5B01A45058AE154BC4D8BAE73B94D84206C693E4 (void);
 extern void LevelCompleteScript_RetryLvl3_mE6E31C8F8E5D8F23B432C3E721AD9A0DD1EDAFCA (void);
 extern void LevelCompleteScript_GoToHub_mD15496A23FC52F73301153548F5814BF12CE9C37 (void);
+extern void LevelCompleteScript_DestroyObject_mFA7E211C2E416781707E44DC60E2AD2761428D44 (void);
 extern void LevelCompleteScript__ctor_m65C81B2F8ADC321B0470F7B2871CD8977F279431 (void);
+extern void U3CDestroyObjectU3Ed__20__ctor_mC742DBCD9DF3490F76836AF8D9B5DF153A1AEDD6 (void);
+extern void U3CDestroyObjectU3Ed__20_System_IDisposable_Dispose_m92BFEA1B54C0F2F5FBE5CC811735E490053A5516 (void);
+extern void U3CDestroyObjectU3Ed__20_MoveNext_m4626741B623C250CE0C2CDAF392F698D147ACC6F (void);
+extern void U3CDestroyObjectU3Ed__20_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD6582685537F38483F0856273E20902FF621E35A (void);
+extern void U3CDestroyObjectU3Ed__20_System_Collections_IEnumerator_Reset_m278D73538DF5D35FB1B3865D3B5758DCF458CF2F (void);
+extern void U3CDestroyObjectU3Ed__20_System_Collections_IEnumerator_get_Current_m80FE1F95DFBBB4514BD60E751FC67FFD775E68D8 (void);
+extern void LoadLevelScript_Start_mB86B472389F4AF8E1943D9695CC332034573032B (void);
+extern void LoadLevelScript__ctor_m50FFD0F1D1B3476D9ABA7696CB144FDF194C2D45 (void);
 extern void MovingPlattformDiagonalScript_Update_mD7BD5DB39EAB720C2ADD7EF122AFB6F1F1D156A5 (void);
 extern void MovingPlattformDiagonalScript_MovePlatform_mAE1C8EE26E4A3D47A7373011B80C66A18E43AB1F (void);
 extern void MovingPlattformDiagonalScript_OnCollisionStay_m2105313156FEE020619BB1DBE268E6A52471DF39 (void);
@@ -117,6 +145,12 @@ extern void Respawn_Subject_Script_SetRespawnPoint_mC6BBC9B3ADA9E73C4C947FDBF50F
 extern void Respawn_Subject_Script_Respawn_m766852BA0A571F2BCFE4181E7D5D2CB30F144CD8 (void);
 extern void Respawn_Subject_Script_OnTriggerEnter_mC72444CFE6627B15B1A4FCE29609630804F8F3D2 (void);
 extern void Respawn_Subject_Script__ctor_mF5C089D55F507F9E627FAAD4D14A750D4250E135 (void);
+extern void SaveLoadSystemScript_StartSave_m3E8829E27C80227A820C6C15977AF1A6498C62BF (void);
+extern void SaveLoadSystemScript_SaveData_m3EB2D9B694736F2725A83D2C3C618A8BA1D7F450 (void);
+extern void SaveLoadSystemScript_LoadData_m41D65A08CBCB11DA536B4C103EC24236F661B410 (void);
+extern void SaveLoadSystemScript_DeleteData_mEA84AC1AED28D34803025BC31116D1F10BF0E004 (void);
+extern void SaveLoadSystemScript_Update_m87E782BD4EE0549B1EA079C136FBD1F30D6EAD45 (void);
+extern void SaveLoadSystemScript__ctor_mD976A56EF45768B04A5B2607AE8B4B78374875C1 (void);
 extern void SecRespawnScript_OnTriggerEnter_mF4FCFEA27E8902A0E7C9650164643CAD81629801 (void);
 extern void SecRespawnScript__ctor_mAD0B151BB13FFDCD137635821F68A314B90F63A9 (void);
 extern void Shop_Selection_Script_ItemLInfoUp_m7EB9BFC4D730047435737C54696EFFC3C00CE8C8 (void);
@@ -127,14 +161,18 @@ extern void Shop_Selection_Script_ItemRInfoUp_m3DDBCCD426706CC557540A5FA06909433
 extern void Shop_Selection_Script_ItemRInfoClose_m412134E1AAB26CE449E997CF40684091B3A6EA6E (void);
 extern void Shop_Selection_Script_ItemRFreischaltenn_mD32AA852D1AB3112D078CEECA3A3F7A83505EA1A (void);
 extern void Shop_Selection_Script_ItemRFreischaltennein_mB7BE2FD97C2EB2AAFB52E8A9BEF7C7BD17078956 (void);
+extern void Shop_Selection_Script_ItemFinalFreischalten_m46107BEF6319474F10278FE0415CFAAA7098BAAE (void);
 extern void Shop_Selection_Script__ctor_m44728AD35CB2FB58B91585E4A6E8BD070FFDD9C2 (void);
 extern void UI_Manager_Observer_Start_mCAED72622A7CC0C4E6292CA821E14AC655F2B986 (void);
 extern void UI_Manager_Observer_UpdateStarUI_m7AFCF24CDF15D42D280FA12842E593F5866F02B0 (void);
 extern void UI_Manager_Observer_UpdateCollectionUI_m0CC09684F5444BA2E841050C9C42BF1FA53FC1C1 (void);
 extern void UI_Manager_Observer__ctor_mAC7BAF73D2661398B105068744C818710F7D588D (void);
+extern void UnlockItems_Update_m7531DA6D67219262B56817F0A2515535B46876F2 (void);
+extern void UnlockItems_CountItem1_m15B03DC49E44AC63624E0B596383BDEF6D80F5D9 (void);
+extern void UnlockItems__ctor_m3A6253E6B26BADDE31D5D62A1CC4081940D75B3C (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[122] = 
+static Il2CppMethodPointer s_methodPointers[160] = 
 {
 	Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6,
 	Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B,
@@ -145,7 +183,10 @@ static Il2CppMethodPointer s_methodPointers[122] =
 	ChangeLevelScript_Exit_m2F77E2303F2264D7944D7DE9400DFB15BE214EFB,
 	ChangeLevelScript__ctor_m151873EF9C2B05114D063C8427F624EBFFC739DB,
 	Checkpoint_Script_OnTriggerEnter_m62A1A4634EEE574B1DCB9FDF9AF4DC7E3401CA0B,
+	Checkpoint_Script_OnTriggerExit_mAF4825E0BF310D5F6916D2FBBC3A726291680D7E,
 	Checkpoint_Script__ctor_m617D0731457FCBFAF46734ED7CEF57BE2D2F612A,
+	CollectBlaupauseScript_OnTriggerEnter_m779787C719C75A9BAF55046ED2D8DAB97458E069,
+	CollectBlaupauseScript__ctor_m92BF714ED76CED3C5EEF1FC35E8BAD22DB7C8A1E,
 	Collection_Subject_Script_add_OnStarsCollected_m24B8539D6DC3CC14008838FC0FEE7FB5709ED68D,
 	Collection_Subject_Script_remove_OnStarsCollected_m718BE3708EFC46D61AF2A8B6144B12242EBA253A,
 	Collection_Subject_Script_add_OnCollectableCollected_m816DC671ABF8E8303C1081E6A24FE68176D7827B,
@@ -166,8 +207,19 @@ static Il2CppMethodPointer s_methodPointers[122] =
 	ControllerManager_Crouch_m3BFF044E48EA72935C6AA2B36C56F897B241BE05,
 	ControllerManager_StandUp_m76847BC53CDF03BE013752641255E543D3733B17,
 	ControllerManager_IsGrounded_m55DE5A0EE841D2FBA0D77643B97D1BFA94281690,
-	ControllerManager_OnCollisionEnter_mA128A9606C83E4CEB965617EA557CC892769F684,
+	ControllerManager_OnCollisionStay_m34AAB62E963B04DDB6FE80881D50A97DD5DC0FDF,
 	ControllerManager__ctor_m9A286134861DC4D5BAC0849A2770275D29C5E2DC,
+	CountStarsGesamtScript_Update_m1FDF14C83E7B3FE81FFF3D671255B6FC53A8B1DF,
+	CountStarsGesamtScript__ctor_mF58D4EED2558A1532A4E117B2C96F89F2A31222B,
+	CutsceneScript_Start_m90D548274D21B735188754404F4E43972E9A543F,
+	CutsceneScript_DestroyObject_m92755ECE400BFA62E9944A1C0E7A3B70A510089F,
+	CutsceneScript__ctor_mA26C4E105C1C460F2DD03EFAA18E7903AC208B1C,
+	U3CDestroyObjectU3Ed__3__ctor_mFBE334963945D6847A375776012755397755A13D,
+	U3CDestroyObjectU3Ed__3_System_IDisposable_Dispose_m7517D6B951CC2F5E67AF479DECCA099975D67BF4,
+	U3CDestroyObjectU3Ed__3_MoveNext_mB03A61E0A83C6AC340A0D3A93BE44E56EFF3645E,
+	U3CDestroyObjectU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m1810538D021306454B1148ED8A9BFF0A2BEB261F,
+	U3CDestroyObjectU3Ed__3_System_Collections_IEnumerator_Reset_m31F22B77E996A2778E63BE43BF89BF07F625F11D,
+	U3CDestroyObjectU3Ed__3_System_Collections_IEnumerator_get_Current_mE4E0359B3C4FFDA624EBC7462DB115458D7C8804,
 	DeathScreenScript_Start_m4C51AD9E23B552FAA0D3CD067BDD640CC2F78512,
 	DeathScreenScript_Update_m0EF72251831CCE18B0E5A5142552EE2FD9E95D00,
 	DeathScreenScript_OnTriggerEnter_m08F1F9598CB9DCC648A3F5575EFD9C03409493D3,
@@ -187,6 +239,11 @@ static Il2CppMethodPointer s_methodPointers[122] =
 	KreisMovingPlattformScript_OnCollisionStay_m6DC2F79E8C261CB77E82D8316D8372ED6AD0AE1D,
 	KreisMovingPlattformScript_OnCollisionExit_mDEA38E18E2156B962E6376438E4A4997CA021D1C,
 	KreisMovingPlattformScript__ctor_m29ED8526869CAA81C81352AED72A0CCA33AD9CC6,
+	LagerAuswahlScript_Start_m25D5643F599274402E015E89C76A6522FF46ED95,
+	LagerAuswahlScript_AuswahlJa_mA4EEC4C09AB806392AFB387B03EDEAF4097299C7,
+	LagerAuswahlScript_AuswahlNein_m6831E419DA5C9EDD71C0201F5615DDF748E99E97,
+	LagerAuswahlScript_AuswahlMenUFC_mEE38C729A32BABDB6C8373769D5276EDA8F50C8B,
+	LagerAuswahlScript__ctor_m41C0347D0E2735D8B55183554474236C64786EAF,
 	LevelCompleteScript_Start_m6FE3F00ECBBEB632B928ADF97C0DAD257C2C7859,
 	LevelCompleteScript_OnTriggerEnter_m44433B3D8D339C34F52611DEDD444390609B1C25,
 	LevelCompleteScript_GameOverScreen_mAF2CEDC45FDFA833B29722FEDC8CC0CC2BE50658,
@@ -197,7 +254,16 @@ static Il2CppMethodPointer s_methodPointers[122] =
 	LevelCompleteScript_RetryLvl2_m5B01A45058AE154BC4D8BAE73B94D84206C693E4,
 	LevelCompleteScript_RetryLvl3_mE6E31C8F8E5D8F23B432C3E721AD9A0DD1EDAFCA,
 	LevelCompleteScript_GoToHub_mD15496A23FC52F73301153548F5814BF12CE9C37,
+	LevelCompleteScript_DestroyObject_mFA7E211C2E416781707E44DC60E2AD2761428D44,
 	LevelCompleteScript__ctor_m65C81B2F8ADC321B0470F7B2871CD8977F279431,
+	U3CDestroyObjectU3Ed__20__ctor_mC742DBCD9DF3490F76836AF8D9B5DF153A1AEDD6,
+	U3CDestroyObjectU3Ed__20_System_IDisposable_Dispose_m92BFEA1B54C0F2F5FBE5CC811735E490053A5516,
+	U3CDestroyObjectU3Ed__20_MoveNext_m4626741B623C250CE0C2CDAF392F698D147ACC6F,
+	U3CDestroyObjectU3Ed__20_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD6582685537F38483F0856273E20902FF621E35A,
+	U3CDestroyObjectU3Ed__20_System_Collections_IEnumerator_Reset_m278D73538DF5D35FB1B3865D3B5758DCF458CF2F,
+	U3CDestroyObjectU3Ed__20_System_Collections_IEnumerator_get_Current_m80FE1F95DFBBB4514BD60E751FC67FFD775E68D8,
+	LoadLevelScript_Start_mB86B472389F4AF8E1943D9695CC332034573032B,
+	LoadLevelScript__ctor_m50FFD0F1D1B3476D9ABA7696CB144FDF194C2D45,
 	MovingPlattformDiagonalScript_Update_mD7BD5DB39EAB720C2ADD7EF122AFB6F1F1D156A5,
 	MovingPlattformDiagonalScript_MovePlatform_mAE1C8EE26E4A3D47A7373011B80C66A18E43AB1F,
 	MovingPlattformDiagonalScript_OnCollisionStay_m2105313156FEE020619BB1DBE268E6A52471DF39,
@@ -241,6 +307,12 @@ static Il2CppMethodPointer s_methodPointers[122] =
 	Respawn_Subject_Script_Respawn_m766852BA0A571F2BCFE4181E7D5D2CB30F144CD8,
 	Respawn_Subject_Script_OnTriggerEnter_mC72444CFE6627B15B1A4FCE29609630804F8F3D2,
 	Respawn_Subject_Script__ctor_mF5C089D55F507F9E627FAAD4D14A750D4250E135,
+	SaveLoadSystemScript_StartSave_m3E8829E27C80227A820C6C15977AF1A6498C62BF,
+	SaveLoadSystemScript_SaveData_m3EB2D9B694736F2725A83D2C3C618A8BA1D7F450,
+	SaveLoadSystemScript_LoadData_m41D65A08CBCB11DA536B4C103EC24236F661B410,
+	SaveLoadSystemScript_DeleteData_mEA84AC1AED28D34803025BC31116D1F10BF0E004,
+	SaveLoadSystemScript_Update_m87E782BD4EE0549B1EA079C136FBD1F30D6EAD45,
+	SaveLoadSystemScript__ctor_mD976A56EF45768B04A5B2607AE8B4B78374875C1,
 	SecRespawnScript_OnTriggerEnter_mF4FCFEA27E8902A0E7C9650164643CAD81629801,
 	SecRespawnScript__ctor_mAD0B151BB13FFDCD137635821F68A314B90F63A9,
 	Shop_Selection_Script_ItemLInfoUp_m7EB9BFC4D730047435737C54696EFFC3C00CE8C8,
@@ -251,15 +323,19 @@ static Il2CppMethodPointer s_methodPointers[122] =
 	Shop_Selection_Script_ItemRInfoClose_m412134E1AAB26CE449E997CF40684091B3A6EA6E,
 	Shop_Selection_Script_ItemRFreischaltenn_mD32AA852D1AB3112D078CEECA3A3F7A83505EA1A,
 	Shop_Selection_Script_ItemRFreischaltennein_mB7BE2FD97C2EB2AAFB52E8A9BEF7C7BD17078956,
+	Shop_Selection_Script_ItemFinalFreischalten_m46107BEF6319474F10278FE0415CFAAA7098BAAE,
 	Shop_Selection_Script__ctor_m44728AD35CB2FB58B91585E4A6E8BD070FFDD9C2,
 	UI_Manager_Observer_Start_mCAED72622A7CC0C4E6292CA821E14AC655F2B986,
 	UI_Manager_Observer_UpdateStarUI_m7AFCF24CDF15D42D280FA12842E593F5866F02B0,
 	UI_Manager_Observer_UpdateCollectionUI_m0CC09684F5444BA2E841050C9C42BF1FA53FC1C1,
 	UI_Manager_Observer__ctor_mAC7BAF73D2661398B105068744C818710F7D588D,
+	UnlockItems_Update_m7531DA6D67219262B56817F0A2515535B46876F2,
+	UnlockItems_CountItem1_m15B03DC49E44AC63624E0B596383BDEF6D80F5D9,
+	UnlockItems__ctor_m3A6253E6B26BADDE31D5D62A1CC4081940D75B3C,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[122] = 
+static const int32_t s_InvokerIndices[160] = 
 {
 	5777,
 	5777,
@@ -268,6 +344,9 @@ static const int32_t s_InvokerIndices[122] =
 	5777,
 	5777,
 	5777,
+	5777,
+	4587,
+	4587,
 	5777,
 	4587,
 	5777,
@@ -295,22 +374,15 @@ static const int32_t s_InvokerIndices[122] =
 	5777,
 	5777,
 	5777,
-	4587,
 	5777,
+	5654,
 	5777,
+	4556,
 	5777,
+	5559,
+	5654,
 	5777,
-	5777,
-	5777,
-	5777,
-	5777,
-	5777,
-	5777,
-	5777,
-	5777,
-	5777,
-	4587,
-	4587,
+	5654,
 	5777,
 	5777,
 	4587,
@@ -321,6 +393,38 @@ static const int32_t s_InvokerIndices[122] =
 	5777,
 	5777,
 	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	4587,
+	4587,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	4587,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
+	5654,
+	5777,
+	4556,
+	5777,
+	5559,
+	5654,
+	5777,
+	5654,
 	5777,
 	5777,
 	5777,
@@ -366,6 +470,12 @@ static const int32_t s_InvokerIndices[122] =
 	5777,
 	4587,
 	5777,
+	8937,
+	5777,
+	5777,
+	5777,
+	5777,
+	5777,
 	4587,
 	5777,
 	5777,
@@ -378,17 +488,21 @@ static const int32_t s_InvokerIndices[122] =
 	5777,
 	5777,
 	5777,
+	5777,
 	4556,
 	4556,
 	5777,
-	8945,
+	5777,
+	8937,
+	5777,
+	8946,
 	5777,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	122,
+	160,
 	s_methodPointers,
 	0,
 	NULL,
