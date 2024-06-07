@@ -28,6 +28,7 @@ public class LagerAuswahlScript : MonoBehaviour
     {
         KreuzItem1.SetActive(false);
         AuswahlJaNein.SetActive(false);
+        EventManagerScript.TriggerEvent("PlaySoundEquip");
     }
     public void AuswahlNein()
     {

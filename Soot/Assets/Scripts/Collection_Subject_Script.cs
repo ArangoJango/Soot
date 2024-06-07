@@ -14,11 +14,13 @@ public class Collection_Subject_Script : MonoBehaviour
         public void CollectCoin(int starsToAdd)
         {
             totalStars += starsToAdd;
+            EventManagerScript.TriggerEvent("PlaySoundCollectCoin");
             OnStarsCollected?.Invoke(totalStars);
         }
         public void CollectCollectable(int collectablesToAdd)
         {
         totalCollected += collectablesToAdd;
+        EventManagerScript.TriggerEvent("PlaySoundCollectCollectable");
         OnCollectableCollected?.Invoke(totalCollected);
         }
 

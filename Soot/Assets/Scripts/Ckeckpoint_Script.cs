@@ -11,6 +11,7 @@ public class Checkpoint_Script : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SaveLoadSystemScript.ActivateE = true;
+            EventManagerScript.TriggerEvent("PlaySoundCheckpoint");
             SaveUI.SetActive(true);
             Respawn_Subject_Script respawn_Subject_Script = FindObjectOfType<Respawn_Subject_Script>();
 

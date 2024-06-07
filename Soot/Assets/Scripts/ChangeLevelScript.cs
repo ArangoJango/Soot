@@ -7,9 +7,9 @@ public class ChangeLevelScript : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) 
-        { 
-            SceneManager.LoadScene(1); 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -27,7 +27,14 @@ public class ChangeLevelScript : MonoBehaviour
         {
             CountStarsGesamtScript.Starsgesamt += 50;
         }
+
+        /*if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            Debug.Log("JumpSound triggered.");
+            EventManagerScript.TriggerEvent("PlaySoundJump");
+        }*/
     }
+
     public void GoToLevel1()
     {
         SceneManager.LoadScene(1);

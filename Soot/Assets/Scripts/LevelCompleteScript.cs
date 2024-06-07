@@ -29,6 +29,8 @@ public class LevelCompleteScript : MonoBehaviour
 
     public void GameOverScreen()
     {
+        EventManagerScript.TriggerEvent("PlaySoundLevelComplete");
+        EventManagerScript.TriggerEvent("PlaySoundCountUp");
         Time.timeScale = 0;
         LevelCompleetScreen.SetActive(true);
         UIStars.SetActive(false);

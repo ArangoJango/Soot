@@ -10,6 +10,7 @@ public class BoostPlattormScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            EventManagerScript.TriggerEvent("PlaySoundBoost");
             Rigidbody playerRb = other.GetComponent<Rigidbody>();
             if (playerRb != null)
             {

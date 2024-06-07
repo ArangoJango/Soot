@@ -22,6 +22,7 @@ public class DeathScreenScript : MonoBehaviour
     {
         if (other.gameObject.name == "RespawnTrigger")
         {
+            EventManagerScript.TriggerEvent("PlaySoundFallingDeath");
             GameOverScreen();
         }
         if (other.gameObject.name == "Cude (18)" || other.gameObject.name == "Cude (35)" || other.gameObject.name == "Cude (42)")

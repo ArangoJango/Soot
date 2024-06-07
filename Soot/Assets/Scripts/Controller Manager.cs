@@ -54,6 +54,7 @@ public class ControllerManager : MonoBehaviour
         // Check for jump input and if the player is over an object with the tag 'Ground'
         if (Input.GetKeyDown(KeyCode.Space) && canJump && (IsGrounded() || remainingJumps > 0))
         {
+            EventManagerScript.TriggerEvent("PlaySoundJump");
             StartJump();
         }
 
@@ -212,5 +213,12 @@ public class ControllerManager : MonoBehaviour
             Grounded = false;
         }
         
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            EventManagerScript.TriggerEvent("PlaySoundLanding");
+        }
     }
 }

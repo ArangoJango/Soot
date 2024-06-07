@@ -46,7 +46,8 @@ public class Shop_Selection_Script : MonoBehaviour
     public void ItemFinalFreischalten()
     {
         if (CountStarsGesamtScript.Starsgesamt>=50) 
-        { 
+        {
+            EventManagerScript.TriggerEvent("PlaySoundBuy");
             CountStarsGesamtScript.Starsgesamt -= 50;
             FinalFreiL.SetActive(false);
             UnlockLagerItem1.SetActive(true); 
