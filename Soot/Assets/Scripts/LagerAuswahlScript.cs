@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LagerAuswahlScript : MonoBehaviour
 {
-    public GameObject KreuzItem1, AuswahlJaNein;
+    public GameObject KreuzItem1, AuswahlJaNein, Player;
     private bool istAktiviert = false;
     public void Start()
     {
@@ -29,11 +29,13 @@ public class LagerAuswahlScript : MonoBehaviour
         KreuzItem1.SetActive(false);
         AuswahlJaNein.SetActive(false);
         EventManagerScript.TriggerEvent("PlaySoundEquip");
+        Player.GetComponent<PlayerGlidingScript>().enabled = true;
     }
     public void AuswahlNein()
     {
         AuswahlJaNein.SetActive(false);
         KreuzItem1.SetActive(true);
+        Player.GetComponent<PlayerGlidingScript>().enabled = false;
     }
     public void AuswahlMenü()
     {

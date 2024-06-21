@@ -8,6 +8,7 @@ public class Shop_Selection_Script : MonoBehaviour
     public GameObject ItemLInfo, ItemRInfo, ItemLFreischalten, ItemRFreischalten, ItemRbutton;
     public GameObject FinalFreiL;
     public GameObject UnlockLagerItem1;
+    public GameObject Player;
     public void ItemLInfoUp()
     {
         ItemLInfo.SetActive(true);
