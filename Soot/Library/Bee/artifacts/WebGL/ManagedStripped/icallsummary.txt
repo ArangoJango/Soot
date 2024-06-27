@@ -57,6 +57,8 @@ UnityEngine.Application::OpenURL
 UnityEngine.Application::Quit
 UnityEngine.Application::get_platform
 UnityEngine.AsyncOperation::InternalDestroy
+UnityEngine.AudioSource::PlayHelper
+UnityEngine.AudioSource::set_clip
 UnityEngine.Behaviour::get_enabled
 UnityEngine.Behaviour::get_isActiveAndEnabled
 UnityEngine.Behaviour::set_enabled
@@ -168,6 +170,7 @@ UnityEngine.CanvasRenderer::set_popMaterialCount
 UnityEngine.CanvasRenderer::GetMaterial
 UnityEngine.Collider::get_enabled
 UnityEngine.Collider::ClosestPoint_Injected
+UnityEngine.Collider::set_enabled
 UnityEngine.Collider2D::get_bounds_Injected
 UnityEngine.ColorGamutUtility::GetColorPrimaries
 UnityEngine.ColorGamutUtility::GetTransferFunction
@@ -817,8 +820,10 @@ UnityEngine.RenderTexture::get_dimension
 UnityEngine.Resources::GetBuiltinResource
 UnityEngine.ResourcesAPIInternal::Load
 UnityEngine.ResourcesAPIInternal::FindShaderByName
+UnityEngine.Rigidbody::get_mass
 UnityEngine.Rigidbody::AddForce_Injected
 UnityEngine.Rigidbody::get_velocity_Injected
+UnityEngine.Rigidbody::set_useGravity
 UnityEngine.Rigidbody::set_velocity_Injected
 UnityEngine.ScalableBufferManager::get_heightScaleFactor
 UnityEngine.ScalableBufferManager::get_widthScaleFactor

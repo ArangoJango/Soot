@@ -23,6 +23,10 @@ public class ChangeLevelScript : MonoBehaviour
         {
             SceneManager.LoadScene(4);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SceneManager.LoadScene(5);
+        }
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             CountStarsGesamtScript.Starsgesamt += 50;

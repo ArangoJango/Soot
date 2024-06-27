@@ -72,4 +72,14 @@ public class DeathScreenScript : MonoBehaviour
         SceneManager.LoadScene(3);
         Time.timeScale = 1;
     }
+    public void RetryLvl4()
+    {
+        SceneManager.LoadScene(4);
+        Time.timeScale = 1;
+    }
+    public void RetryLvl5()
+    {
+        SceneManager.LoadScene(5);
+        Time.timeScale = 1;
+    }
 }

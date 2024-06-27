@@ -15,6 +15,7 @@ public class PlayerGlidingScript : MonoBehaviour
     private bool isGliding = false;
     private float glideTime;
     private float initialGravityScale;
+    private Coroutine glideCoroutine;
 
     void Start()
     {
@@ -67,6 +68,11 @@ public class PlayerGlidingScript : MonoBehaviour
         glideTime = 0f;
         rb.velocity = new Vector3(rb.velocity.x, glideSpeed, rb.velocity.z);
         rb.useGravity = false;
+        if (glideCoroutine != null)
+        {
+            StopCoroutine(glideCoroutine);
+        }
+        glideCoroutine = StartCoroutine(ReduceAccelerationOverTime());
     }
 
     void Glide()
@@ -95,5 +101,30 @@ public class PlayerGlidingScript : MonoBehaviour
         isGliding = false;
         rb.useGravity = true;
         rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+        Player.GetComponent<ControllerManager>().enabled = true;
+        ResetAcceleration();
+    }
+
+    void ResetAcceleration()
+    {
+        acceleration = 5f;
+    }
+
+    IEnumerator ReduceAccelerationOverTime()
+    {
+        while (isGliding)
+        {
+            yield return new WaitForSeconds(1f);
+            acceleration = Mathf.Max(1f, acceleration - 1f);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (isGliding)
+        {
+            Player.GetComponent<ControllerManager>().enabled = true;
+            EndGlide();
+        }
     }
 }
