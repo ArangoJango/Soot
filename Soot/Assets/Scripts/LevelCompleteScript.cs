@@ -17,6 +17,8 @@ public class LevelCompleteScript : MonoBehaviour
     {
         LevelCompleetScreen.SetActive(false);
         Cutscene.SetActive(false);
+        CollectedStars.text = System.Convert.ToString(0);
+        CollectedCollectables.text = System.Convert.ToString(0);
     }
 
     private void OnTriggerEnter(Collider other)

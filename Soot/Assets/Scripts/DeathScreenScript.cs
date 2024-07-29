@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class DeathScreenScript : MonoBehaviour
 {
 
-    public GameObject DeathScreenMenue, UIStars, UICollectable;
+    public GameObject DeathScreenMenue, UIStars, UICollectable, Cube1, Cube2, Cube3;
+    public static bool TriggerGameOverScreen=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,11 @@ public class DeathScreenScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (TriggerGameOverScreen)
+        {
+            GameOverScreen();
+            TriggerGameOverScreen = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,15 +30,16 @@ public class DeathScreenScript : MonoBehaviour
             EventManagerScript.TriggerEvent("PlaySoundFallingDeath");
             GameOverScreen();
         }
-        if (other.gameObject.name == "Cude (18)" || other.gameObject.name == "Cude (35)" || other.gameObject.name == "Cude (42)")
+        if (other.gameObject.name == Cube1.name || other.gameObject.name == Cube2.name || other.gameObject.name == Cube3.name)
         {
             GameOverScreen();
-        }
+        }       
     }
 
     public void GameOverScreen()
-    {
+    {    
         Time.timeScale = 0;
+        waiter();
         DeathScreenMenue.SetActive(true);
         UIStars.SetActive(false);
         UICollectable.SetActive(false);
@@ -81,5 +87,9 @@ public class DeathScreenScript : MonoBehaviour
     {
         SceneManager.LoadScene(5);
         Time.timeScale = 1;
+    }
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(2);
     }
 }

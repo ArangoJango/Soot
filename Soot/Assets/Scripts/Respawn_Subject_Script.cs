@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Respawn_Subject_Script : MonoBehaviour
 {
@@ -31,6 +32,16 @@ public class Respawn_Subject_Script : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if (other.CompareTag("Player"))
+        {
+            if (scene.name == "Level 3") { EventManagerScript.TriggerEvent("PlaySoundFallingWater"); } else { EventManagerScript.TriggerEvent("PlaySoundFallingDeath"); }
+            DeathScreenScript.TriggerGameOverScreen = true;
+            Respawn();
+        }
+    }
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {

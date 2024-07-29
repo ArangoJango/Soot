@@ -8,6 +8,7 @@ public class CollectBlaupauseScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            EventManagerScript.TriggerEvent("PlaySoundCollectCoin");
             UnlockItems.CountItem1();
             Destroy(this.gameObject);
         }

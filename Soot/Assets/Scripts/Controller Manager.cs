@@ -220,5 +220,9 @@ public class ControllerManager : MonoBehaviour
         {
             EventManagerScript.TriggerEvent("PlaySoundLanding");
         }
+        if (collision.gameObject.name == "3D_ENV_UNI_PH_Water_250424.01")
+        {
+            EventManagerScript.TriggerEvent("PlaySoundFallingWater");
+        }
     }
 }
